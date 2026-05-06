@@ -16,6 +16,7 @@ public class PlayerContoller : MonoBehaviour
     private int currentLives = 3;
     [SerializeField] public TMP_Text livesText;
     [SerializeField] public TMP_Text gameOverText;
+    public PauseMenu pauseMenu;
 
     void Awake()
     {
@@ -91,7 +92,9 @@ public class PlayerContoller : MonoBehaviour
     }
     public void GameOver()
     {
-        gameOverText.gameObject.SetActive(true);
-        Time.timeScale = 0f; // Pause the game
+        pauseMenu.GameOver();
+
+        //gameOverText.gameObject.SetActive(true);
+        //Time.timeScale = 0f; 
     }
 }
