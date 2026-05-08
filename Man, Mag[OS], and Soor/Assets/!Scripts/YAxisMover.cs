@@ -3,10 +3,14 @@ using UnityEngine;
 
 public class YAxisMover : MonoBehaviour
 {
-    [Header("Movement Settings")]
-
+   
     public float speed = 3f;
 
+    public float lifetime = 5f;
+    void Start()
+    {
+        Destroy(gameObject, lifetime);
+    }
     void Update()
     {
         

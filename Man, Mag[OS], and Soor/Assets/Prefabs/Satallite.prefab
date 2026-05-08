@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5869122712119951152}
   - component: {fileID: 7796555040342060499}
   m_Layer: 0
-  m_Name: Meteor
+  m_Name: Satallite
   m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
