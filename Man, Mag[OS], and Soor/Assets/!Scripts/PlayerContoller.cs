@@ -31,13 +31,13 @@ public class PlayerContoller : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         KeyCode shorten;
         KeyCode lengthen;
 
         switch (player)
-        {
+        {       //Place holders until we set up controller support, but I have no idea how to do that
             case Player.PlayerA:
                 shorten = KeyCode.A;
                 lengthen = KeyCode.D;
@@ -72,7 +72,7 @@ public class PlayerContoller : MonoBehaviour
             TakeDamage();
         }
     }
-
+*/
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Hazard"))
@@ -87,14 +87,14 @@ public class PlayerContoller : MonoBehaviour
 
         if (currentLives <= 0)
         {
-            GameOver();
+            pauseMenu.GameOver();
         }
     }
-    public void GameOver()
-    {
-        pauseMenu.GameOver();
+    //public void GameOver()
+    //{
+      //  pauseMenu.GameOver();
 
         //gameOverText.gameObject.SetActive(true);
         //Time.timeScale = 0f; 
-    }
+ //   }
 }

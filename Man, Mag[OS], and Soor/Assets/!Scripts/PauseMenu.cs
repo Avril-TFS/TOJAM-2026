@@ -4,10 +4,12 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject resumeButton, quitButton, restartButton, mainMenuButton;
     [SerializeField] private GameObject pauseText, gameOverText;
+    private bool isGameOver = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Time.timeScale = 1;
+        isGameOver = false;
 
         pauseText.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(false);
@@ -27,8 +29,11 @@ public class PauseMenu : MonoBehaviour
             {
                 PauseGame();
             }
-            else
+            if(Time.timeScale == 0 || isGameOver == true)
             {
+                return;
+            }
+            else{
                 ResumeGame();
             }
         }
@@ -39,6 +44,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0;
         pauseText.gameObject.SetActive(true);
         resumeButton.gameObject.SetActive(true);
+        restartButton.gameObject.SetActive(true);
         quitButton.gameObject.SetActive(true);
         mainMenuButton.gameObject.SetActive(true);
     }
@@ -47,6 +53,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         pauseText.gameObject.SetActive(false);
         resumeButton.gameObject.SetActive(false);
+        restartButton.gameObject.SetActive(false);
         quitButton.gameObject.SetActive(false);
         mainMenuButton.gameObject.SetActive(false);
     }
@@ -54,6 +61,7 @@ public class PauseMenu : MonoBehaviour
     public void GameOver()
     {
         Time.timeScale = 0;
+        isGameOver= true;
         gameOverText.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
         mainMenuButton.gameObject.SetActive(true);
