@@ -683,12 +683,28 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 659562314557181719, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
       propertyPath: playerA
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 659562314557181719, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
+      propertyPath: playerB
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 659562314557181719, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
+      propertyPath: playerC
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 659562314557181719, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
+      propertyPath: rgbdPlayerA
       value: 
       objectReference: {fileID: 411493884}
     - target: {fileID: 659562314557181719, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
-      propertyPath: playerB
+      propertyPath: rgbdPlayerB
       value: 
       objectReference: {fileID: 16793609}
+    - target: {fileID: 659562314557181719, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
+      propertyPath: rgbdPlayerC
+      value: 
+      objectReference: {fileID: 411493884}
     - target: {fileID: 7082139845878809290, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
       propertyPath: m_Name
       value: Rope (2)
@@ -2085,10 +2101,26 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 659562314557181719, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
       propertyPath: playerA
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 659562314557181719, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
+      propertyPath: playerB
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 659562314557181719, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
+      propertyPath: playerC
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 659562314557181719, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
+      propertyPath: rgbdPlayerA
       value: 
       objectReference: {fileID: 1523010344}
     - target: {fileID: 659562314557181719, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
-      propertyPath: playerB
+      propertyPath: rgbdPlayerB
+      value: 
+      objectReference: {fileID: 411493884}
+    - target: {fileID: 659562314557181719, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
+      propertyPath: rgbdPlayerC
       value: 
       objectReference: {fileID: 411493884}
     - target: {fileID: 7082139845878809290, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
@@ -3883,12 +3915,28 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 659562314557181719, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
       propertyPath: playerA
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 659562314557181719, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
+      propertyPath: playerB
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 659562314557181719, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
+      propertyPath: playerC
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 659562314557181719, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
+      propertyPath: rgbdPlayerA
       value: 
       objectReference: {fileID: 16793609}
     - target: {fileID: 659562314557181719, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
-      propertyPath: playerB
+      propertyPath: rgbdPlayerB
       value: 
       objectReference: {fileID: 1523010344}
+    - target: {fileID: 659562314557181719, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
+      propertyPath: rgbdPlayerC
+      value: 
+      objectReference: {fileID: 411493884}
     - target: {fileID: 7082139845878809290, guid: 0f87d7f7269db624982c9d4652599cb5, type: 3}
       propertyPath: m_Name
       value: Rope

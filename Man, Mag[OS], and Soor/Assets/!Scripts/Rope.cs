@@ -6,12 +6,12 @@ public class Rope : MonoBehaviour
 
     public Rigidbody rgbdPlayerA;       
     public Rigidbody rgbdPlayerB;
-    public Rigidbody rgbdPlayerC;
+    //public Rigidbody rgbdPlayerC;
 
-    public Player playerA;
+    /*public Player playerA;
     public Player playerB; 
     public Player playerC;
-
+*/
     [SerializeField] private float minLenght = 2f;
     [SerializeField] private float maxLenght = 10f;
     [SerializeField] private float pullSpeed = 5f;
@@ -49,17 +49,20 @@ public class Rope : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleInput(playerA);
-        HandleInput(playerB);
-        HandleInput(playerC);
+       // HandleInput(playerA);
+       // HandleInput(playerB);
+       // HandleInput(playerC);
 
 
         joint.maxDistance = Mathf.Lerp(joint.maxDistance, targetLength, Time.deltaTime * 8f);
 
         DrawRope();
+
+        targetLength = Mathf.Clamp(targetLength, minLenght, maxLenght);
+    
     }
 
-    void HandleInput(Player player)
+    /*void HandleInput(Player player)
     {
         KeyCode Shorten = KeyCode.None;
         KeyCode Lengthen = KeyCode.None;
@@ -81,28 +84,28 @@ public class Rope : MonoBehaviour
 
         }
 
-        if (HandleInput.GetKey(shorten))
+        if (Input.GetKey(Shorten))
         {
             targetLength -= pullSpeed * Time.deltaTime;
         }
-        if (HandleInput.GetKey(Lengthen))
+        if (Input.GetKey(Lengthen))
         {
             targetLength += pullSpeed * Time.deltaTime;
         }
 
         targetLength = Mathf.Clamp(targetLength, minLenght, maxLenght);
-    }
+    }*/
 
-  /*  public void Shorten()
+    public void Shorten()
     {
-        targetLength = Mathf.Max(minLenght, targetLength - pullSpeed * Time.deltaTime);
+        targetLength -= pullSpeed * Time.deltaTime;
     }
 
     public void Lengthen()
     {
-        targetLength = Mathf.Min(maxLenght, targetLength + pullSpeed * Time.deltaTime);
+        targetLength += pullSpeed * Time.deltaTime;
     }
-*/
+
     void DrawRope()
     {
         Vector3 midPoint = (rgbdPlayerA.position + rgbdPlayerB.position) / 2f;

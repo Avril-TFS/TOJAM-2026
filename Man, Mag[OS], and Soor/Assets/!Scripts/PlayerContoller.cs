@@ -31,39 +31,58 @@ public class PlayerContoller : MonoBehaviour
     }
 
     // Update is called once per frame
-    /*void Update()
+    void FixedUpdate()
     {
-        KeyCode shorten;
-        KeyCode lengthen;
+        KeyCode shortenL;
+        KeyCode lengthenL;
+        KeyCode shortenR;
+        KeyCode lengthenR;
 
         switch (player)
         {       //Place holders until we set up controller support, but I have no idea how to do that
             case Player.PlayerA:
-                shorten = KeyCode.A;
-                lengthen = KeyCode.D;
+                shortenL = KeyCode.A;
+                lengthenL = KeyCode.Q;
+                shortenR = KeyCode.D;
+                lengthenR = KeyCode.E;
                 break;
             case Player.PlayerB:
-                shorten = KeyCode.J;
-                lengthen = KeyCode.L;
+                shortenL = KeyCode.J;
+                lengthenL = KeyCode.U;
+                shortenR = KeyCode.L;
+                lengthenR = KeyCode.O;
                 break;
             case Player.PlayerC:
-                shorten = KeyCode.LeftArrow;
-                lengthen = KeyCode.RightArrow;
+                shortenL = KeyCode.LeftArrow;
+                lengthenL = KeyCode.UpArrow;
+                shortenR = KeyCode.DownArrow;
+                lengthenR = KeyCode.RightArrow;
                 break;
             default:
-                shorten = KeyCode.None;
-                lengthen = KeyCode.None;
+                shortenL = KeyCode.None;
+                lengthenL = KeyCode.None;
+                shortenR = KeyCode.None;
+                lengthenR = KeyCode.None;
                 break;
         }
 
-        if (Input.GetKey(shorten))
+        if (Input.GetKey(shortenL))
         {
             leftRope.Shorten();
-            rightRope.Shorten();
+            
         }
-        else if (Input.GetKey(lengthen))
+            else if (Input.GetKey(lengthenL))
+            {
+                leftRope.Lengthen();
+                
+            }
+        if (Input.GetKey(shortenR))
         {
-            leftRope.Lengthen();
+            rightRope.Shorten();
+            }
+        else if (Input.GetKey(lengthenR))
+        {
+            
             rightRope.Lengthen();
         }
         //Testing damage with space key
@@ -72,7 +91,7 @@ public class PlayerContoller : MonoBehaviour
             TakeDamage();
         }
     }
-*/
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Hazard"))
