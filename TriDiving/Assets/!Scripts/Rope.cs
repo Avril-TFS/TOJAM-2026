@@ -24,23 +24,6 @@ public class Rope : MonoBehaviour
     void Awake()
     {
         line = GetComponent<LineRenderer>();
-
-/*
-        //joint = GetComponent<SpringJoint>();
-        joint = rgbdPlayerA.gameObject.AddComponent<SpringJoint>();
-        joint.connectedBody = rgbdPlayerB;
-
-        joint.autoConfigureConnectedAnchor = false;
-        joint.anchor = Vector3.zero;
-        joint.connectedAnchor = Vector3.zero;
-
-        joint.spring = 40f;
-        joint.damper = 5f;
-
-        float startDist = Vector3.Distance(rgbdPlayerA.position, rgbdPlayerB.position);
-        joint.maxDistance = startDist;
-        targetLength = startDist;
-        */
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,62 +34,11 @@ public class Rope : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // HandleInput(playerA);
-       // HandleInput(playerB);
-       // HandleInput(playerC);
-
-
-      //  joint.maxDistance = Mathf.Lerp(joint.maxDistance, targetLength, Time.deltaTime * 8f);
 
         DrawRope(); // probably just move this method into the update, and delete like all of these shitty commented out code
 
-      //  targetLength = Mathf.Clamp(targetLength, minLenght, maxLenght);
     
     }
-
-    /*void HandleInput(Player player)
-    {
-        KeyCode Shorten = KeyCode.None;
-        KeyCode Lengthen = KeyCode.None;
-
-        switch (player)
-        {
-            case player.PlayerA:
-                Shorten = KeyCode.A;
-                Lengthen = KeyCode.D;
-                break;
-            case player.PlayerB:
-                Shorten = KeyCode.J;
-                Lengthen = KeyCode.L;
-                break;
-            case player.PlayerC:
-                Shorten = KeyCode.LeftArrow;
-                Lengthen = KeyCode.RightArrow;
-                break;
-
-        }
-
-        if (Input.GetKey(Shorten))
-        {
-            targetLength -= pullSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey(Lengthen))
-        {
-            targetLength += pullSpeed * Time.deltaTime;
-        }
-
-        targetLength = Mathf.Clamp(targetLength, minLenght, maxLenght);
-    }
-
-    public void Shorten()
-    {
-        targetLength -= pullSpeed * Time.deltaTime;
-    }
-
-    public void Lengthen()
-    {
-        targetLength += pullSpeed * Time.deltaTime;
-    }*/
 
     void DrawRope()
     {

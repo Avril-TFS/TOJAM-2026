@@ -32,68 +32,6 @@ public class PlayerContoller : MonoBehaviour
 
     }
 
-    // Old stuff brobably gone
-    /* void FixedUpdate()
-     {
-         KeyCode shortenL;
-         KeyCode lengthenL;
-         KeyCode shortenR;
-         KeyCode lengthenR;
-
-         switch (player)
-         {       //Place holders until we set up controller support, but I have no idea how to do that
-             case Player.PlayerA:
-                 shortenL = KeyCode.A;
-                 lengthenL = KeyCode.Q;
-                 shortenR = KeyCode.D;
-                 lengthenR = KeyCode.E;
-                 break;
-             case Player.PlayerB:
-                 shortenL = KeyCode.J;
-                 lengthenL = KeyCode.U;
-                 shortenR = KeyCode.L;
-                 lengthenR = KeyCode.O;
-                 break;
-             case Player.PlayerC:
-                 shortenL = KeyCode.LeftArrow;
-                 lengthenL = KeyCode.UpArrow;
-                 shortenR = KeyCode.DownArrow;
-                 lengthenR = KeyCode.RightArrow;
-                 break;
-             default:
-                 shortenL = KeyCode.None;
-                 lengthenL = KeyCode.None;
-                 shortenR = KeyCode.None;
-                 lengthenR = KeyCode.None;
-                 break;
-         }
-
-         if (Input.GetKey(shortenL))
-         {
-             leftRope.Shorten();
-
-         }
-             else if (Input.GetKey(lengthenL))
-             {
-                 leftRope.Lengthen();
-
-             }
-         if (Input.GetKey(shortenR))
-         {
-             rightRope.Shorten();
-             }
-         else if (Input.GetKey(lengthenR))
-         {
-
-             rightRope.Lengthen();
-         }
-         //Testing damage with space key
-         if (Input.GetKeyDown(KeyCode.Space))
-         {
-             TakeDamage();
-         }
-     }*/
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Hazard"))

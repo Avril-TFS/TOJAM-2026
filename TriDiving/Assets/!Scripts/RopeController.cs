@@ -1,27 +1,52 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class RopeController : MonoBehaviour
 {
     public Transform playerA;
     public Transform playerB;
     public Transform playerC;
-
     public float pullSpeed = 5f;
     public float pushSpeed = 5f;
     public float relaxSpeed = 3f;
     public float maxDistance = 8f;
 
+    float restAB, restAC, restBC;
 
-    float restAB;
-    float restAC;
-    float restBC;
+    Gamepad padA, padB, padC;
 
     void Start()
+    {
+        restAB = Vector3.Distance(playerA.position, playerB.position);
+        restAC = Vector3.Distance(playerA.position, playerC.position);
+        restBC = Vector3.Distance(playerB.position, playerC.position);
+
+        if (Gamepad.all.Count > 0) padA = Gamepad.all[0];
+        if (Gamepad.all.Count > 1) padB = Gamepad.all[1];
+        if (Gamepad.all.Count > 2) padC = Gamepad.all[2];
+    }
+
+    void OnEnable()
+    {
+        InputSystem.onDeviceChange += OnDeviceChange;
+    }
+
+    void OnDisable()
+    {
+        InputSystem.onDeviceChange -= OnDeviceChange;
+    }
+
+    void OnDeviceChange(InputDevice device, InputDeviceChange change)
+    {
+        if (device is Gamepad &&
+            (change == InputDeviceChange.Added || change == InputDeviceChange.Removed))
         {
-            restAB = Vector3.Distance(playerA.position, playerB.position);
-            restAC = Vector3.Distance(playerA.position, playerC.position);
-            restBC = Vector3.Distance(playerB.position, playerC.position);
+            padA = Gamepad.all.Count > 0 ? Gamepad.all[0] : null;
+            padB = Gamepad.all.Count > 1 ? Gamepad.all[1] : null;
+            padC = Gamepad.all.Count > 2 ? Gamepad.all[2] : null;
         }
+    }
+
     void Update()
     {
         HandleInput();
@@ -32,63 +57,81 @@ public class RopeController : MonoBehaviour
 
     void HandleInput()
     {
-        // Player A pulls
-        if (Input.GetKey(KeyCode.A)) Pull(playerA, playerB);
-        if (Input.GetKey(KeyCode.D)) Pull(playerA, playerC);
-        
-        // Player A pushes
-        if (Input.GetKey(KeyCode.W)) Push(playerA, playerB);
-        if (Input.GetKey(KeyCode.S)) Push(playerA, playerC);
+        // ----------------------------------------------------------
+        // Player A
+        // Keyboard: A/D = pull, W/S = push
+        // Gamepad:  left trigger = pull B, right trigger = pull C
+        //           left shoulder = push B, right shoulder = push C
+        // ----------------------------------------------------------
+        if (Input.GetKey(KeyCode.A) || (padA != null && padA.leftTrigger.isPressed))
+            Pull(playerA, playerB);
 
-        // Player B pulls
-        if (Input.GetKey(KeyCode.J)) Pull(playerB, playerA);
-        if (Input.GetKey(KeyCode.L)) Pull(playerB, playerC);
+        if (Input.GetKey(KeyCode.D) || (padA != null && padA.rightTrigger.isPressed))
+            Pull(playerA, playerC);
 
-        // Player B pushes
-        if (Input.GetKey(KeyCode.I)) Push(playerB, playerA);
-        if (Input.GetKey(KeyCode.K)) Push(playerB, playerC);
+        if (Input.GetKey(KeyCode.W) || (padA != null && padA.leftShoulder.isPressed))
+            Push(playerA, playerB);
 
-        // Player C pulls
-        if (Input.GetKey(KeyCode.LeftArrow)) Pull(playerC, playerA);
-        if (Input.GetKey(KeyCode.RightArrow)) Pull(playerC, playerB);
+        if (Input.GetKey(KeyCode.S) || (padA != null && padA.rightShoulder.isPressed))
+            Push(playerA, playerC);
 
-        // Player C pushes
-        if (Input.GetKey(KeyCode.UpArrow)) Push(playerC, playerA);
-        if (Input.GetKey(KeyCode.DownArrow)) Push(playerC, playerB);
+        // ----------------------------------------------------------
+        // Player B
+        // Keyboard: J/L = pull, I/K = push
+        // Gamepad:  left trigger = pull A, right trigger = pull C
+        //           left shoulder = push A, right shoulder = push C
+        // ----------------------------------------------------------
+        if (Input.GetKey(KeyCode.J) || (padB != null && padB.leftTrigger.isPressed))
+            Pull(playerB, playerA);
+
+        if (Input.GetKey(KeyCode.L) || (padB != null && padB.rightTrigger.isPressed))
+            Pull(playerB, playerC);
+
+        if (Input.GetKey(KeyCode.I) || (padB != null && padB.leftShoulder.isPressed))
+            Push(playerB, playerA);
+
+        if (Input.GetKey(KeyCode.K) || (padB != null && padB.rightShoulder.isPressed))
+            Push(playerB, playerC);
+
+        // ----------------------------------------------------------
+        // Player C
+        // Keyboard: left/right arrow = pull, up/down arrow = push
+        // Gamepad:  left trigger = pull A, right trigger = pull B
+        //           left shoulder = push A, right shoulder = push B
+        // ----------------------------------------------------------
+        if (Input.GetKey(KeyCode.LeftArrow) || (padC != null && padC.leftTrigger.isPressed))
+            Pull(playerC, playerA);
+
+        if (Input.GetKey(KeyCode.RightArrow) || (padC != null && padC.rightTrigger.isPressed))
+            Pull(playerC, playerB);
+
+        if (Input.GetKey(KeyCode.UpArrow) || (padC != null && padC.leftShoulder.isPressed))
+            Push(playerC, playerA);
+
+        if (Input.GetKey(KeyCode.DownArrow) || (padC != null && padC.rightShoulder.isPressed))
+            Push(playerC, playerB);
     }
 
     void Pull(Transform puller, Transform target)
     {
-        Vector3 dir = (puller.position - target.position).normalized;
-        target.position += dir * pullSpeed * Time.deltaTime;
+        float dist = Vector3.Distance(puller.position, target.position);
+        if (dist < maxDistance)
+            puller.position = Vector3.MoveTowards(puller.position, target.position, pullSpeed * Time.deltaTime);
     }
-    
+
     void Push(Transform pusher, Transform target)
     {
-        Vector3 dir = (pusher.position + target.position).normalized;
-        target.position += dir * pullSpeed * Time.deltaTime;
+        pusher.position = Vector3.MoveTowards(pusher.position, target.position, -pushSpeed * Time.deltaTime);
     }
-    
-    void Relax(Transform p1, Transform p2, float restLength)
+
+    void Relax(Transform a, Transform b, float restDistance)
     {
-        float dist = Vector3.Distance(p1.position, p2.position);
-
-        if (Mathf.Abs(dist - restLength) < 1.5f) {
-            Vector3 dir = (p2.position - p1.position).normalized;
-
-            float move = relaxSpeed * Time.deltaTime;
-
-            if(dist <= restLength)
-            {
-                p1.position += dir * move;
-                p2.position -= dir * move;
-            }
-             if(dist > restLength)
-            {
-                p1.position -= dir * move;
-                p2.position += dir * move;
-            }
+        float dist = Vector3.Distance(a.position, b.position);
+        if (dist > restDistance)
+        {
+            Vector3 midpoint = (a.position + b.position) / 2f;
+            a.position = Vector3.MoveTowards(a.position, midpoint, relaxSpeed * Time.deltaTime);
+            b.position = Vector3.MoveTowards(b.position, midpoint, relaxSpeed * Time.deltaTime);
         }
-        
     }
 }
