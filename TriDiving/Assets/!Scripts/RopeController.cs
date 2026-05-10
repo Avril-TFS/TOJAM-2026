@@ -7,6 +7,7 @@ public class RopeController : MonoBehaviour
     public Transform playerC;
 
     public float pullSpeed = 5f;
+    public float pushSpeed = 5f;
     public float relaxSpeed = 3f;
     public float maxDistance = 8f;
 
@@ -34,14 +35,26 @@ public class RopeController : MonoBehaviour
         // Player A pulls
         if (Input.GetKey(KeyCode.A)) Pull(playerA, playerB);
         if (Input.GetKey(KeyCode.D)) Pull(playerA, playerC);
+        
+        // Player A pushes
+        if (Input.GetKey(KeyCode.W)) Push(playerA, playerB);
+        if (Input.GetKey(KeyCode.S)) Push(playerA, playerC);
 
         // Player B pulls
-        if (Input.GetKey(KeyCode.V)) Pull(playerB, playerA);
-        if (Input.GetKey(KeyCode.B)) Pull(playerB, playerC);
+        if (Input.GetKey(KeyCode.J)) Pull(playerB, playerA);
+        if (Input.GetKey(KeyCode.L)) Pull(playerB, playerC);
+
+        // Player B pushes
+        if (Input.GetKey(KeyCode.I)) Push(playerB, playerA);
+        if (Input.GetKey(KeyCode.K)) Push(playerB, playerC);
 
         // Player C pulls
-        if (Input.GetKey(KeyCode.J)) Pull(playerC, playerA);
-        if (Input.GetKey(KeyCode.L)) Pull(playerC, playerB);
+        if (Input.GetKey(KeyCode.LeftArrow)) Pull(playerC, playerA);
+        if (Input.GetKey(KeyCode.RightArrow)) Pull(playerC, playerB);
+
+        // Player C pushes
+        if (Input.GetKey(KeyCode.UpArrow)) Push(playerC, playerA);
+        if (Input.GetKey(KeyCode.DownArrow)) Push(playerC, playerB);
     }
 
     void Pull(Transform puller, Transform target)
@@ -49,7 +62,13 @@ public class RopeController : MonoBehaviour
         Vector3 dir = (puller.position - target.position).normalized;
         target.position += dir * pullSpeed * Time.deltaTime;
     }
-
+    
+    void Push(Transform pusher, Transform target)
+    {
+        Vector3 dir = (pusher.position + target.position).normalized;
+        target.position += dir * pullSpeed * Time.deltaTime;
+    }
+    
     void Relax(Transform p1, Transform p2, float restLength)
     {
         float dist = Vector3.Distance(p1.position, p2.position);
