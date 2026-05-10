@@ -8,6 +8,9 @@ Event	ID	Name			Wwise Object Path	Notes
 	3829327645	Play_Satellite			\Default Work Unit\Play_Satellite	
 	4175868975	Play_Object_Small			\Default Work Unit\Play_Object_Small	
 
+Effect plug-ins	ID	Name	Type				Notes
+	1588715066	Echoes_Linear	Wwise Delay			
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	78112925	Satellite_3_Fast	C:\Users\phill\Documents\GitHub\TOJAM2026\TriDiving\TriDiving_WwiseProject\.cache\Windows\SFX\Satelite_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Satellite\Satellite_3_Fast		911240
 	118877258	Player_Flight	C:\Users\phill\Documents\GitHub\TOJAM2026\TriDiving\TriDiving_WwiseProject\.cache\Windows\SFX\Flight_0DF5A0E9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Flight		1591820

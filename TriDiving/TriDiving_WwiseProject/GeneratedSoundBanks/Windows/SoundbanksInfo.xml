@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{B6CBD692-12EC-CDBA-0932-48F63C40C91F}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{3ED62E55-529D-B8A8-0529-E3B28EB77B23}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{5235B6C0-5EBF-6F82-51DF-A9DC9A80A7F6}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{28D72CAE-8A94-76E0-F2DB-499878F8715C}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -67,6 +67,11 @@
 					<CachePath>SFX/GameMUSIC_Intro_FBC78EF0.wem</CachePath>
 				</File>
 			</Media>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="1588715066" Name="Echoes_Linear" LibName="Wwise Delay" LibId="6946819"/>
+				</ShareSets>
+			</Plugins>
 			<Events>
 				<Event Id="414863633" Name="Play_Main_Music" DurationType="Infinite">
 					<MediaRefs>
@@ -106,6 +111,11 @@
 						<MediaRef Id="844518436"/>
 						<MediaRef Id="985666058"/>
 					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="1588715066"/>
+						</ShareSets>
+					</PluginRefs>
 				</Event>
 				<Event Id="3829327645" Name="Play_Satellite" MaxAttenuation="50" DurationType="Infinite">
 					<MediaRefs>
@@ -115,5 +125,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D9E4520E-E760-B9D0-80FB-3B79786D390C}</FileHash>
+	<FileHash>{879BD9BB-91BA-88B0-69E0-46E01F13D59B}</FileHash>
 </SoundBanksInfo>
