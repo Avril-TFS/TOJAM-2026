@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: b7d74ad9fe53234b82e9a784d12865ce
     GuidInternal: 
-    m_lastTime: -8584231714860663741
+    m_lastTime: -8584231638090512555
     List:
     - name: Main
       guid: 1532fc206eb322429734da9fd010b68c
@@ -94,11 +94,11 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: d76d273bdb8b664da2fab9e069f30f5b
     GuidInternal: 
-    m_lastTime: -8584231717559220902
+    m_lastTime: -8584231644726363916
     List:
-    - name: Play_New_Sound_SFX
-      guid: 046648f16d10f8429da8012ff10f28fb
-      id: 431205792
+    - name: Play_Main_Music
+      guid: 71180abac9b1d6408b766d6c1d022812
+      id: 414863633
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -106,11 +106,130 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: d76d273bdb8b664da2fab9e069f30f5b
-      - ElementName: Play_New_Sound_SFX
+      - ElementName: Play_Main_Music
         ObjectType: 3
-        guid: 046648f16d10f8429da8012ff10f28fb
-      Path: Events\Default Work Unit\Play_New_Sound_SFX
+        guid: 71180abac9b1d6408b766d6c1d022812
+      Path: Events\Default Work Unit\Play_Main_Music
       maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Object_Large
+      guid: 29e2317b40491a4e9b47684f0e0864f5
+      id: 3554726307
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d76d273bdb8b664da2fab9e069f30f5b
+      - ElementName: Play_Object_Large
+        ObjectType: 3
+        guid: 29e2317b40491a4e9b47684f0e0864f5
+      Path: Events\Default Work Unit\Play_Object_Large
+      maxAttenuation: 50
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Object_Medium
+      guid: eea98094db9749449b88c417a0df3b32
+      id: 3570159127
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d76d273bdb8b664da2fab9e069f30f5b
+      - ElementName: Play_Object_Medium
+        ObjectType: 3
+        guid: eea98094db9749449b88c417a0df3b32
+      Path: Events\Default Work Unit\Play_Object_Medium
+      maxAttenuation: 50
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Object_Small
+      guid: db2f686d0f188541b9fed0682e7abac1
+      id: 4175868975
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d76d273bdb8b664da2fab9e069f30f5b
+      - ElementName: Play_Object_Small
+        ObjectType: 3
+        guid: db2f686d0f188541b9fed0682e7abac1
+      Path: Events\Default Work Unit\Play_Object_Small
+      maxAttenuation: 50
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Plane
+      guid: c87dc63220dcb44791bcdceb9ecf78ae
+      id: 2689642136
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d76d273bdb8b664da2fab9e069f30f5b
+      - ElementName: Play_Plane
+        ObjectType: 3
+        guid: c87dc63220dcb44791bcdceb9ecf78ae
+      Path: Events\Default Work Unit\Play_Plane
+      maxAttenuation: 50
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Player_Flight
+      guid: 859b7390f6a8f349aad35f83b3d1b9f8
+      id: 1699845522
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d76d273bdb8b664da2fab9e069f30f5b
+      - ElementName: Play_Player_Flight
+        ObjectType: 3
+        guid: 859b7390f6a8f349aad35f83b3d1b9f8
+      Path: Events\Default Work Unit\Play_Player_Flight
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Player_Impact_Object_Body
+      guid: bbbcb8608fdf6d4281c3d1d3fd5a31f2
+      id: 1248507643
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d76d273bdb8b664da2fab9e069f30f5b
+      - ElementName: Play_Player_Impact_Object_Body
+        ObjectType: 3
+        guid: bbbcb8608fdf6d4281c3d1d3fd5a31f2
+      Path: Events\Default Work Unit\Play_Player_Impact_Object_Body
+      maxAttenuation: 0
+      maxDuration: 0.26816985
+      minDuration: 0.1612953
+    - name: Play_Satellite
+      guid: 613c2d7f289cfb41904756ac30309d76
+      id: 3829327645
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d76d273bdb8b664da2fab9e069f30f5b
+      - ElementName: Play_Satellite
+        ObjectType: 3
+        guid: 613c2d7f289cfb41904756ac30309d76
+      Path: Events\Default Work Unit\Play_Satellite
+      maxAttenuation: 50
       maxDuration: -1
       minDuration: -1
   RtpcWwu:
@@ -170,7 +289,7 @@ MonoBehaviour:
     m_lastTime: -8584231717558577204
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 06000000070000000b0000000c000000
+  ExpandedWaapiItemIds: 06000000070000000b0000000c0000001100000012000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
