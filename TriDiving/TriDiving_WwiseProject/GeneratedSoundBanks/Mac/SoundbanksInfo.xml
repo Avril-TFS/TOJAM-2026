@@ -22,23 +22,98 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{3F99B13A-22E1-7503-EE0F-0403069CCED3}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{2CCECD10-4211-6899-8C95-206A8D6AF127}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
+				<File Id="78112925" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Satelite.wav</ShortName>
+					<CachePath>SFX/Satelite_FBC78EF0.wem</CachePath>
+				</File>
 				<File Id="118877258" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Flight.wav</ShortName>
-					<CachePath>SFX/Flight_3AC214E7.wem</CachePath>
+					<CachePath>SFX/Flight_0DF5A0E9.wem</CachePath>
+				</File>
+				<File Id="264884582" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Voices, Child, Damaged, Combat, Pain, Short 02 SND85747 2.wav</ShortName>
+					<CachePath>SFX/Voices, Child, Damaged, Combat, Pain, Short 02 SND85747 2_82624CF8.wem</CachePath>
+				</File>
+				<File Id="295465527" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Voices, Child, Damaged, Combat, Pain, Short 02 SND85747 2.wav</ShortName>
+					<CachePath>SFX/Voices, Child, Damaged, Combat, Pain, Short 02 SND85747 2_8F8D30F8.wem</CachePath>
+				</File>
+				<File Id="558459913" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Asteroid_Medium.wav</ShortName>
+					<CachePath>SFX/Asteroid_Medium_0B0B680F.wem</CachePath>
+				</File>
+				<File Id="844518436" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>74 Large Flash Bulb Low &amp; Mid-Range Pops w Slight Crackle .wav</ShortName>
+					<CachePath>SFX/74 Large Flash Bulb Low &amp; Mid-Range Pops w Slight Crackle _6CD43473.wem</CachePath>
+				</File>
+				<File Id="866857425" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Aircraft, Misc, Propeller Plane, Dash 8, Landing, Turn Off Engine SND95997.wav</ShortName>
+					<CachePath>SFX/Aircraft, Misc, Propeller Plane, Dash 8, Landing, Turn Off Engine SND95997_9E4798DE.wem</CachePath>
+				</File>
+				<File Id="887671605" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GameMUSIC2.wav</ShortName>
+					<CachePath>SFX/GameMUSIC2_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="985666058" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Voices, Child, Damaged, Combat, Pain, Short 02 SND85747 2.wav</ShortName>
+					<CachePath>SFX/Voices, Child, Damaged, Combat, Pain, Short 02 SND85747 2_7C04BC61.wem</CachePath>
+				</File>
+				<File Id="1051738908" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GameMUSIC_Intro.wav</ShortName>
+					<CachePath>SFX/GameMUSIC_Intro_FBC78EF0.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="431205792" Name="Play_New_Sound_SFX" DurationType="Infinite">
+				<Event Id="414863633" Name="Play_Main_Music" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="887671605"/>
+						<MediaRef Id="1051738908"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3554726307" Name="Play_Object_Large" MaxAttenuation="50" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="558459913"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3570159127" Name="Play_Object_Medium" MaxAttenuation="50" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="558459913"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4175868975" Name="Play_Object_Small" MaxAttenuation="50" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="558459913"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2689642136" Name="Play_Plane" MaxAttenuation="50" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="866857425"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1699845522" Name="Play_Player_Flight" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="118877258"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1248507643" Name="Play_Player_Impact_Object_Body" DurationType="OneShot" DurationMin="0.1612953" DurationMax="0.26816985">
+					<MediaRefs>
+						<MediaRef Id="264884582"/>
+						<MediaRef Id="295465527"/>
+						<MediaRef Id="844518436"/>
+						<MediaRef Id="985666058"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3829327645" Name="Play_Satellite" MaxAttenuation="50" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="78112925"/>
 					</MediaRefs>
 				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{06E4BD29-C4F0-2054-BE2C-B1D2603A232F}</FileHash>
+	<FileHash>{D1BA8899-EED2-831F-519E-BE2A84E46DD5}</FileHash>
 </SoundBanksInfo>

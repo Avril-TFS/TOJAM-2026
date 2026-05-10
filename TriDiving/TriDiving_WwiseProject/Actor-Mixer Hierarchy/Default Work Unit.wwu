@@ -3,9 +3,24 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{261AAB84-F30F-4694-A0F2-73F5D939C7C2}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="New Sound SFX" ID="{31BE421A-4034-4463-9075-811C71F8EDF8}" ShortID="270193797">
+				<Sound Name="Player_Flight" ID="{31BE421A-4034-4463-9075-811C71F8EDF8}" ShortID="270193797">
 					<PropertyList>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>53</Value>
+							</ValueList>
+						</Property>
+						<Property Name="OutputBusLowpass" Type="int16">
+							<ValueList>
+								<Value>12</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-13</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -18,9 +33,9 @@
 					<ChildrenList>
 						<AudioFileSource Name="Flight" ID="{3F18B4A7-5DDF-4BF4-AF5B-E16F90909024}">
 							<PropertyList>
-								<Property Name="LoopBegin" Type="Real64" Value="0"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.00359630578071712"/>
 								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-								<Property Name="TrimEnd" Type="Real64" Value="8.30080750181752"/>
+								<Property Name="TrimEnd" Type="Real64" Value="8.29022713827312"/>
 							</PropertyList>
 							<Language>SFX</Language>
 							<AudioFile>Flight.wav</AudioFile>
@@ -33,6 +48,671 @@
 						<ActiveSource Name="Flight" ID="{3F18B4A7-5DDF-4BF4-AF5B-E16F90909024}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="Object_Large" ID="{B481F13B-FE9A-46D3-A3D8-D829C08F7009}" ShortID="386665969">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="OutputBusLowpass" Type="int16">
+							<ValueList>
+								<Value>57</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-380</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Object_Attenuation" ID="{C0FFDA44-1585-4145-8DD9-1843ED189725}" WorkUnitID="{9B29A54E-27CC-499D-BC9C-69F9970FABAE}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2096301C-4D5B-48E5-9D71-60B514C02C66}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E619582-A01E-476D-A0AE-5F481F27D188}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Asteroid_Medium" ID="{D8735358-9657-453D-97A1-D3E41E1B97FA}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.0077542211328976"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.00387711056644879"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Asteroid_Medium.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="558459913"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Asteroid_Medium" ID="{D8735358-9657-453D-97A1-D3E41E1B97FA}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Object_Medium" ID="{7859A3CE-E936-428A-930E-69ED294C0B86}" ShortID="962148585">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="OutputBusHighpass" Type="int16">
+							<ValueList>
+								<Value>22</Value>
+							</ValueList>
+						</Property>
+						<Property Name="OutputBusLowpass" Type="int16">
+							<ValueList>
+								<Value>28</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-380</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Object_Attenuation" ID="{C0FFDA44-1585-4145-8DD9-1843ED189725}" WorkUnitID="{9B29A54E-27CC-499D-BC9C-69F9970FABAE}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2096301C-4D5B-48E5-9D71-60B514C02C66}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E619582-A01E-476D-A0AE-5F481F27D188}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Asteroid_Medium" ID="{E4AE607D-72DF-47D5-A6D1-F811B3C0C643}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.0077542211328976"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.00387711056644879"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Asteroid_Medium.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="558459913"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Asteroid_Medium" ID="{E4AE607D-72DF-47D5-A6D1-F811B3C0C643}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Object_Small" ID="{AA54152A-F557-4AD1-A8B7-0B1C7E47D07B}" ShortID="1056540425">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="OutputBusHighpass" Type="int16">
+							<ValueList>
+								<Value>41</Value>
+							</ValueList>
+						</Property>
+						<Property Name="OutputBusLowpass" Type="int16">
+							<ValueList>
+								<Value>37</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-380</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-1</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Object_Attenuation" ID="{C0FFDA44-1585-4145-8DD9-1843ED189725}" WorkUnitID="{9B29A54E-27CC-499D-BC9C-69F9970FABAE}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2096301C-4D5B-48E5-9D71-60B514C02C66}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E619582-A01E-476D-A0AE-5F481F27D188}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Asteroid_Medium" ID="{EBAC9231-C18F-4FB2-BAB7-2E59980BC1EA}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.0077542211328976"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.00387711056644879"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Asteroid_Medium.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="558459913"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Asteroid_Medium" ID="{EBAC9231-C18F-4FB2-BAB7-2E59980BC1EA}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="Player_Impact_Object_Body" ID="{8EBF5D20-7FCC-441E-9C98-6291468FDAA4}" ShortID="757778484">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2096301C-4D5B-48E5-9D71-60B514C02C66}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E619582-A01E-476D-A0AE-5F481F27D188}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Impact 1" ID="{B0ACC781-D54D-4AB1-97C9-B72130205747}" ShortID="296768858">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>26</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>39</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{A6515344-4791-4507-BF70-B747FBC7FC75}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="40"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{D84C77DE-D8AB-4207-A29B-EBBD2DA34BE6}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="200"/>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2096301C-4D5B-48E5-9D71-60B514C02C66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E619582-A01E-476D-A0AE-5F481F27D188}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="74 Large Flash Bulb Low &amp; Mid-Range Pops w Slight Crackle" ID="{4625768B-7E97-4A98-8853-DD553568DCE3}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0.00393927015250544"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.00393927015250544"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>74 Large Flash Bulb Low &amp; Mid-Range Pops w Slight Crackle .wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="844518436"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="74 Large Flash Bulb Low &amp; Mid-Range Pops w Slight Crackle" ID="{4625768B-7E97-4A98-8853-DD553568DCE3}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="Player_Impact_Object_Voice" ID="{4A779AC9-7929-4550-BFD8-20A0EF6A3B63}" ShortID="728003527">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2096301C-4D5B-48E5-9D71-60B514C02C66}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E619582-A01E-476D-A0AE-5F481F27D188}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Voice 1" ID="{67EEBCA6-7B32-40BE-849D-60031E2D4906}" ShortID="14233297">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>26</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>39</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{AEA6674D-3C6A-4097-90CE-B861FD358890}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="40"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>330</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{A3AC2BF6-03D9-46C2-84C5-6984040D50F6}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="200"/>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2096301C-4D5B-48E5-9D71-60B514C02C66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E619582-A01E-476D-A0AE-5F481F27D188}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="74 Large Flash Bulb Low &amp; Mid-Range Pops w Slight Crackle" ID="{A9033BF1-7824-4F34-9775-0DFC345D1AD4}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0.00393927015250544"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.00393927015250544"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>74 Large Flash Bulb Low &amp; Mid-Range Pops w Slight Crackle .wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="844518436"/>
+									</MediaIDList>
+								</AudioFileSource>
+								<AudioFileSource Name="Voices, Child, Damaged, Combat, Pain, Short 02 SND85747 2" ID="{C60A5248-FF5C-4FDF-8CF2-CC827164BCE9}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.0134975786119455"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.232564391521914"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Voices, Child, Damaged, Combat, Pain, Short 02 SND85747 2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="295465527"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Voices, Child, Damaged, Combat, Pain, Short 02 SND85747 2" ID="{C60A5248-FF5C-4FDF-8CF2-CC827164BCE9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Voice 1_01" ID="{A5EDE9BB-2931-4A05-9FE7-16242C23436F}" ShortID="188327217">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>26</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>39</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{D6D8F133-D553-4932-A1B7-FCD9D6A95857}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="40"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>330</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{F4359FC5-4E1E-4BFF-89F8-28F3BB8B8868}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="200"/>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2096301C-4D5B-48E5-9D71-60B514C02C66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E619582-A01E-476D-A0AE-5F481F27D188}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="74 Large Flash Bulb Low &amp; Mid-Range Pops w Slight Crackle" ID="{54F36C75-F51D-4A54-9E3E-0EA90C4AEAD8}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0.00393927015250544"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.00393927015250544"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>74 Large Flash Bulb Low &amp; Mid-Range Pops w Slight Crackle .wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="844518436"/>
+									</MediaIDList>
+								</AudioFileSource>
+								<AudioFileSource Name="Voices, Child, Damaged, Combat, Pain, Short 02 SND85747 2" ID="{2D7EA88B-4804-44B4-A483-5D1F2A442AF0}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.09178225544564"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.32735342565409"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Voices, Child, Damaged, Combat, Pain, Short 02 SND85747 2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="264884582"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Voices, Child, Damaged, Combat, Pain, Short 02 SND85747 2" ID="{2D7EA88B-4804-44B4-A483-5D1F2A442AF0}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Voice 1_02" ID="{EAB8BE6E-7BB7-4ADF-9289-E650055A51F7}" ShortID="485493612">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>26</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>39</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{B89A1DA3-B29D-4388-8827-7F18988A6661}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="40"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>330</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{860FB1FB-DFCE-48D3-BAB0-79B83C609DA7}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="200"/>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2096301C-4D5B-48E5-9D71-60B514C02C66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E619582-A01E-476D-A0AE-5F481F27D188}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="74 Large Flash Bulb Low &amp; Mid-Range Pops w Slight Crackle" ID="{CCF41439-CA27-417A-908F-E0664D8EE160}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0.00393927015250544"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.00393927015250544"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>74 Large Flash Bulb Low &amp; Mid-Range Pops w Slight Crackle .wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="844518436"/>
+									</MediaIDList>
+								</AudioFileSource>
+								<AudioFileSource Name="Voices, Child, Damaged, Combat, Pain, Short 02 SND85747 2" ID="{8E780507-C49A-474D-9187-0E8C869FB13C}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="2.19757419444347"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.48665649963689"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Voices, Child, Damaged, Combat, Pain, Short 02 SND85747 2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="985666058"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Voices, Child, Damaged, Combat, Pain, Short 02 SND85747 2" ID="{8E780507-C49A-474D-9187-0E8C869FB13C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="Satellite" ID="{AF67071F-0C14-4664-AF92-C72043DE7C6D}" ShortID="152402441">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Object_Attenuation" ID="{C0FFDA44-1585-4145-8DD9-1843ED189725}" WorkUnitID="{9B29A54E-27CC-499D-BC9C-69F9970FABAE}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2096301C-4D5B-48E5-9D71-60B514C02C66}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E619582-A01E-476D-A0AE-5F481F27D188}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Satellite_1_Reg" ID="{2B43B36C-5C36-443D-907A-8FD90C96D65E}" ShortID="436649526">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2096301C-4D5B-48E5-9D71-60B514C02C66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E619582-A01E-476D-A0AE-5F481F27D188}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Satelite" ID="{0CDC8EE3-8499-4E78-B891-5068B19F529D}">
+									<Language>SFX</Language>
+									<AudioFile>Satelite.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="78112925"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Satelite" ID="{0CDC8EE3-8499-4E78-B891-5068B19F529D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Satellite_2_Slow" ID="{D91A6FC0-A69F-4F00-9D0D-3F97468301DE}" ShortID="1059876552">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>35</Value>
+									</ValueList>
+								</Property>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>45</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-200</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2096301C-4D5B-48E5-9D71-60B514C02C66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E619582-A01E-476D-A0AE-5F481F27D188}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Satelite" ID="{C3DCFB88-59EC-4A7E-ADE3-0F1C373D04EF}">
+									<Language>SFX</Language>
+									<AudioFile>Satelite.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="78112925"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Satelite" ID="{C3DCFB88-59EC-4A7E-ADE3-0F1C373D04EF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Satellite_3_Fast" ID="{EA8034A1-1264-4EF0-BDFE-4EB452F2BC3B}" ShortID="174115785">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>35</Value>
+									</ValueList>
+								</Property>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>45</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>200</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2096301C-4D5B-48E5-9D71-60B514C02C66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E619582-A01E-476D-A0AE-5F481F27D188}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Satelite" ID="{37638AFC-56FF-415B-8DE4-612E0A71A168}">
+									<Language>SFX</Language>
+									<AudioFile>Satelite.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="78112925"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Satelite" ID="{37638AFC-56FF-415B-8DE4-612E0A71A168}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="Plane" ID="{03CBFDBB-AF52-4BCE-8B5F-CEEA1D551F74}" ShortID="256725042">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Object_Attenuation" ID="{C0FFDA44-1585-4145-8DD9-1843ED189725}" WorkUnitID="{9B29A54E-27CC-499D-BC9C-69F9970FABAE}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2096301C-4D5B-48E5-9D71-60B514C02C66}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E619582-A01E-476D-A0AE-5F481F27D188}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Plane_1" ID="{5B496456-8303-48F5-B75B-A5289FA8917E}" ShortID="838333287">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{84795153-3DEF-4430-9A4C-5A40DB0F44CA}">
+												<PropertyList>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2096301C-4D5B-48E5-9D71-60B514C02C66}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E619582-A01E-476D-A0AE-5F481F27D188}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Aircraft, Misc, Propeller Plane, Dash 8, Landing, Turn Off Engine SND95997" ID="{F5C60434-10DC-49A1-B115-A0963F1CDF68}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.31202028806228"/>
+										<Property Name="TrimEnd" Type="Real64" Value="5.84807458149347"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Aircraft, Misc, Propeller Plane, Dash 8, Landing, Turn Off Engine SND95997.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="866857425"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Aircraft, Misc, Propeller Plane, Dash 8, Landing, Turn Off Engine SND95997" ID="{F5C60434-10DC-49A1-B115-A0963F1CDF68}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

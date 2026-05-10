@@ -13,7 +13,14 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PLAY_NEW_SOUND_SFX = 431205792U;
+        static const AkUniqueID PLAY_MAIN_MUSIC = 414863633U;
+        static const AkUniqueID PLAY_OBJECT_LARGE = 3554726307U;
+        static const AkUniqueID PLAY_OBJECT_MEDIUM = 3570159127U;
+        static const AkUniqueID PLAY_OBJECT_SMALL = 4175868975U;
+        static const AkUniqueID PLAY_PLANE = 2689642136U;
+        static const AkUniqueID PLAY_PLAYER_FLIGHT = 1699845522U;
+        static const AkUniqueID PLAY_PLAYER_IMPACT_OBJECT_BODY = 1248507643U;
+        static const AkUniqueID PLAY_SATELLITE = 3829327645U;
     } // namespace EVENTS
 
     namespace BANKS

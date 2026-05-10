@@ -5,7 +5,14 @@
 			<ChildrenList>
 				<SoundBank Name="Main" ID="{20FC3215-B36E-4222-9734-DA9FD010B68C}">
 					<ObjectInclusionList>
-						<ObjectRef Name="Play_New_Sound_SFX" ID="{F1486604-106D-42F8-9DA8-012FF10F28FB}" WorkUnitID="{3B276DD7-8BDB-4D66-A2FA-B9E069F30F5B}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Main_Music" ID="{BA0A1871-B1C9-40D6-8B76-6D6C1D022812}" WorkUnitID="{3B276DD7-8BDB-4D66-A2FA-B9E069F30F5B}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Object_Small" ID="{6D682FDB-180F-4185-B9FE-D0682E7ABAC1}" WorkUnitID="{3B276DD7-8BDB-4D66-A2FA-B9E069F30F5B}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Satellite" ID="{7F2D3C61-9C28-41FB-9047-56AC30309D76}" WorkUnitID="{3B276DD7-8BDB-4D66-A2FA-B9E069F30F5B}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Player_Impact_Object_Body" ID="{60B8BCBB-DF8F-426D-81C3-D1D3FD5A31F2}" WorkUnitID="{3B276DD7-8BDB-4D66-A2FA-B9E069F30F5B}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Object_Medium" ID="{9480A9EE-97DB-4449-9B88-C417A0DF3B32}" WorkUnitID="{3B276DD7-8BDB-4D66-A2FA-B9E069F30F5B}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Player_Flight" ID="{90739B85-A8F6-49F3-AAD3-5F83B3D1B9F8}" WorkUnitID="{3B276DD7-8BDB-4D66-A2FA-B9E069F30F5B}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Plane" ID="{03CBFDBB-AF52-4BCE-8B5F-CEEA1D551F74}" WorkUnitID="{261AAB84-F30F-4694-A0F2-73F5D939C7C2}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Object_Large" ID="{7B31E229-4940-4E1A-9B47-684F0E0864F5}" WorkUnitID="{3B276DD7-8BDB-4D66-A2FA-B9E069F30F5B}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

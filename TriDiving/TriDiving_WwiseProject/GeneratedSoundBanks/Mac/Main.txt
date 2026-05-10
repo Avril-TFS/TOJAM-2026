@@ -1,6 +1,22 @@
 Event	ID	Name			Wwise Object Path	Notes
-	431205792	Play_New_Sound_SFX			\Default Work Unit\Play_New_Sound_SFX	
+	414863633	Play_Main_Music			\Default Work Unit\Play_Main_Music	
+	1248507643	Play_Player_Impact_Object_Body			\Default Work Unit\Play_Player_Impact_Object_Body	
+	1699845522	Play_Player_Flight			\Default Work Unit\Play_Player_Flight	
+	2689642136	Play_Plane			\Default Work Unit\Play_Plane	
+	3554726307	Play_Object_Large			\Default Work Unit\Play_Object_Large	
+	3570159127	Play_Object_Medium			\Default Work Unit\Play_Object_Medium	
+	3829327645	Play_Satellite			\Default Work Unit\Play_Satellite	
+	4175868975	Play_Object_Small			\Default Work Unit\Play_Object_Small	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	118877258	New Sound SFX	C:\Users\phill\Documents\GitHub\TOJAM2026\TriDiving\TriDiving_WwiseProject\.cache\Mac\SFX\Flight_3AC214E7.wem		\Actor-Mixer Hierarchy\Default Work Unit\New Sound SFX		1593852
+	78112925	Satellite_3_Fast	C:\Users\phill\Documents\GitHub\TOJAM2026\TriDiving\TriDiving_WwiseProject\.cache\Mac\SFX\Satelite_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Satellite\Satellite_3_Fast		911240
+	118877258	Player_Flight	C:\Users\phill\Documents\GitHub\TOJAM2026\TriDiving\TriDiving_WwiseProject\.cache\Mac\SFX\Flight_0DF5A0E9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Flight		1591820
+	264884582	Voice 1_01	C:\Users\phill\Documents\GitHub\TOJAM2026\TriDiving\TriDiving_WwiseProject\.cache\Mac\SFX\Voices, Child, Damaged, Combat, Pain, Short 02 SND85747 2_82624CF8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Impact_Object_Voice\Voice 1_01		45324
+	295465527	Voice 1	C:\Users\phill\Documents\GitHub\TOJAM2026\TriDiving\TriDiving_WwiseProject\.cache\Mac\SFX\Voices, Child, Damaged, Combat, Pain, Short 02 SND85747 2_8F8D30F8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Impact_Object_Voice\Voice 1		42156
+	558459913	Object_Large	C:\Users\phill\Documents\GitHub\TOJAM2026\TriDiving\TriDiving_WwiseProject\.cache\Mac\SFX\Asteroid_Medium_0B0B680F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Object_Large		227884
+	844518436	Impact 1	C:\Users\phill\Documents\GitHub\TOJAM2026\TriDiving\TriDiving_WwiseProject\.cache\Mac\SFX\74 Large Flash Bulb Low & Mid-Range Pops w Slight Crackle _6CD43473.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Impact_Object_Body\Impact 1		11964
+	866857425	Plane_1	C:\Users\phill\Documents\GitHub\TOJAM2026\TriDiving\TriDiving_WwiseProject\.cache\Mac\SFX\Aircraft, Misc, Propeller Plane, Dash 8, Landing, Turn Off Engine SND95997_9E4798DE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Plane\Plane_1		871020
+	887671605	New Music Track	C:\Users\phill\Documents\GitHub\TOJAM2026\TriDiving\TriDiving_WwiseProject\.cache\Mac\SFX\GameMUSIC2_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Main_Music\Main_01\New Music Track		3608920
+	985666058	Voice 1_02	C:\Users\phill\Documents\GitHub\TOJAM2026\TriDiving\TriDiving_WwiseProject\.cache\Mac\SFX\Voices, Child, Damaged, Combat, Pain, Short 02 SND85747 2_7C04BC61.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player_Impact_Object_Voice\Voice 1_02		55600
+	1051738908	Intro_127_4_4_10M	C:\Users\phill\Documents\GitHub\TOJAM2026\TriDiving\TriDiving_WwiseProject\.cache\Mac\SFX\GameMUSIC_Intro_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Main_Music\Intro\Intro_127_4_4_10M		3619784
 
