@@ -16,11 +16,13 @@ public class PlayerContoller : MonoBehaviour
     private int currentLives = 3;
     [SerializeField] public TMP_Text livesText;
     [SerializeField] public TMP_Text gameOverText;
+    [SerializeField] public TMP_Text gameWinText;
     public PauseMenu pauseMenu;
 
     void Awake()
     {
         gameOverText.gameObject.SetActive(false);
+        gameWinText.gameObject.SetActive(false);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -97,6 +99,18 @@ public class PlayerContoller : MonoBehaviour
         if (other.CompareTag("Hazard"))
         {
             TakeDamage();
+        }
+        if (other.CompareTag("winBox"))
+        {
+            Time.timeScale = 0f;
+
+            if (gameWinText != null)
+            {
+                gameWinText.gameObject.SetActive(true);
+            }
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
     public void TakeDamage()

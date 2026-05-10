@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Hazard
+  - winBox
   layers:
   - Default
   - TransparentFX
