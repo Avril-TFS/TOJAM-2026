@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject resumeButton, quitButton, restartButton, mainMenuButton;
+    [SerializeField] private GameObject resumeButton, quitButton, restartButton;
     [SerializeField] private GameObject pauseText, gameOverText;
     private bool isGameOver = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,7 +16,7 @@ public class PauseMenu : MonoBehaviour
         resumeButton.gameObject.SetActive(false);
         quitButton.gameObject.SetActive(false);
         restartButton.gameObject.SetActive(false);
-        mainMenuButton.gameObject.SetActive(false);
+        //mainMenuButton.gameObject.SetActive(false);
 
     }
 
@@ -46,7 +46,7 @@ public class PauseMenu : MonoBehaviour
         resumeButton.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
         quitButton.gameObject.SetActive(true);
-        mainMenuButton.gameObject.SetActive(true);
+      // mainMenuButton.gameObject.SetActive(true);
     }
     public void ResumeGame()
     {
@@ -55,7 +55,7 @@ public class PauseMenu : MonoBehaviour
         resumeButton.gameObject.SetActive(false);
         restartButton.gameObject.SetActive(false);
         quitButton.gameObject.SetActive(false);
-        mainMenuButton.gameObject.SetActive(false);
+       // mainMenuButton.gameObject.SetActive(false);
     }
 
     public void GameOver()
@@ -64,7 +64,7 @@ public class PauseMenu : MonoBehaviour
         isGameOver= true;
         gameOverText.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
-        mainMenuButton.gameObject.SetActive(true);
+        //mainMenuButton.gameObject.SetActive(true);
         quitButton.gameObject.SetActive(true);
     }
 
@@ -73,10 +73,10 @@ public class PauseMenu : MonoBehaviour
 
         SceneManager.LoadScene("MainScene");
     }
-    public void MainMenu()
+   /* public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-    }
+    }*/
     public void QuitGame()
     {
         Application.Quit();
