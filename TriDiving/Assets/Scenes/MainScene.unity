@@ -308,6 +308,10 @@ MonoBehaviour:
   player: 0
   leftRope: {fileID: 1689000649}
   rightRope: {fileID: 293210338}
+  Play_Player_Impact_Object_Body:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e31c5b165c791be478c695ab6440c172, type: 2}
   totalLives: 3
   livesText: {fileID: 135095842}
   gameOverText: {fileID: 1271492330}
@@ -2092,6 +2096,10 @@ MonoBehaviour:
   player: 2
   leftRope: {fileID: 293210338}
   rightRope: {fileID: 1840644364}
+  Play_Player_Impact_Object_Body:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e31c5b165c791be478c695ab6440c172, type: 2}
   totalLives: 3
   livesText: {fileID: 135095842}
   gameOverText: {fileID: 1271492330}
@@ -4695,6 +4703,10 @@ MonoBehaviour:
   player: 1
   leftRope: {fileID: 1840644364}
   rightRope: {fileID: 1689000649}
+  Play_Player_Impact_Object_Body:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e31c5b165c791be478c695ab6440c172, type: 2}
   totalLives: 3
   livesText: {fileID: 135095842}
   gameOverText: {fileID: 1271492330}

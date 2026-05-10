@@ -802,12 +802,22 @@
 																						<PointList>
 																							<Point>
 																								<XPos>0</XPos>
-																								<YPos>0</YPos>
+																								<YPos>-3.15647</YPos>
 																								<Flags>5</Flags>
 																							</Point>
 																							<Point>
+																								<XPos>6.67973</XPos>
+																								<YPos>-6.22181</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>13.71406</XPos>
+																								<YPos>-5.30464</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
 																								<XPos>18.875</XPos>
-																								<YPos>0</YPos>
+																								<YPos>-4.79749</YPos>
 																								<Flags>37</Flags>
 																							</Point>
 																						</PointList>

@@ -64,7 +64,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-5</Value>
+								<Value>-1</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -116,11 +116,6 @@
 								<Value>-380</Value>
 							</ValueList>
 						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-6</Value>
-							</ValueList>
-						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -170,11 +165,6 @@
 								<Value>-380</Value>
 							</ValueList>
 						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-1</Value>
-							</ValueList>
-						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -206,6 +196,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<RandomSequenceContainer Name="Player_Impact_Object_Body" ID="{8EBF5D20-7FCC-441E-9C98-6291468FDAA4}" ShortID="757778484">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2096301C-4D5B-48E5-9D71-60B514C02C66}"/>
@@ -281,6 +278,13 @@
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="Player_Impact_Object_Voice" ID="{4A779AC9-7929-4550-BFD8-20A0EF6A3B63}" ShortID="728003527">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2096301C-4D5B-48E5-9D71-60B514C02C66}"/>
@@ -525,6 +529,21 @@
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Effects">
+							<Reference>
+								<Local>
+									<EffectSlot Name="" ID="{14E4A15D-7668-4BB2-8A7D-4844925C170A}" ShortID="193553095">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise Delay" CompanyID="0" PluginID="106" PluginType="3">
+												<ObjectRef Name="Echoes_Linear" ID="{D20F3717-EBA2-4E3A-84F8-C8BD431563FB}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="Satellite" ID="{AF67071F-0C14-4664-AF92-C72043DE7C6D}" ShortID="152402441">
 					<PropertyList>
@@ -652,6 +671,11 @@
 				<RandomSequenceContainer Name="Plane" ID="{03CBFDBB-AF52-4BCE-8B5F-CEEA1D551F74}" ShortID="256725042">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>6</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">

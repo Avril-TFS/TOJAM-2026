@@ -10,7 +10,8 @@ public class PlayerContoller : MonoBehaviour
 
     public Rope leftRope;
     public Rope rightRope;
-        
+    public AK.Wwise.Event Play_Player_Impact_Object_Body;
+
     [Header("Lives")]
     [SerializeField] private int totalLives = 3;
     private int currentLives = 3;
@@ -55,6 +56,8 @@ public class PlayerContoller : MonoBehaviour
     {
         currentLives--;
         livesText.text = "Lives: " + currentLives;
+
+        Play_Player_Impact_Object_Body.Post(gameObject);
 
         if (currentLives <= 0)
         {
