@@ -12,11 +12,11 @@ public class Rope : MonoBehaviour
     public Player playerB; 
     public Player playerC;
 */
-    [SerializeField] private float minLenght = 2f;
-    [SerializeField] private float maxLenght = 10f;
-    [SerializeField] private float pullSpeed = 5f;
+   // [SerializeField] private float minLenght = 2f;
+   // [SerializeField] private float maxLenght = 10f;
+//    [SerializeField] private float pullSpeed = 5f;
 
-    private SpringJoint joint;
+    //private SpringJoint joint;
     private LineRenderer line;
 
     private float targetLength;
@@ -25,6 +25,7 @@ public class Rope : MonoBehaviour
     {
         line = GetComponent<LineRenderer>();
 
+/*
         //joint = GetComponent<SpringJoint>();
         joint = rgbdPlayerA.gameObject.AddComponent<SpringJoint>();
         joint.connectedBody = rgbdPlayerB;
@@ -39,6 +40,7 @@ public class Rope : MonoBehaviour
         float startDist = Vector3.Distance(rgbdPlayerA.position, rgbdPlayerB.position);
         joint.maxDistance = startDist;
         targetLength = startDist;
+        */
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -54,11 +56,11 @@ public class Rope : MonoBehaviour
        // HandleInput(playerC);
 
 
-        joint.maxDistance = Mathf.Lerp(joint.maxDistance, targetLength, Time.deltaTime * 8f);
+      //  joint.maxDistance = Mathf.Lerp(joint.maxDistance, targetLength, Time.deltaTime * 8f);
 
-        DrawRope();
+        DrawRope(); // probably just move this method into the update, and delete like all of these shitty commented out code
 
-        targetLength = Mathf.Clamp(targetLength, minLenght, maxLenght);
+      //  targetLength = Mathf.Clamp(targetLength, minLenght, maxLenght);
     
     }
 
@@ -94,7 +96,7 @@ public class Rope : MonoBehaviour
         }
 
         targetLength = Mathf.Clamp(targetLength, minLenght, maxLenght);
-    }*/
+    }
 
     public void Shorten()
     {
@@ -104,7 +106,7 @@ public class Rope : MonoBehaviour
     public void Lengthen()
     {
         targetLength += pullSpeed * Time.deltaTime;
-    }
+    }*/
 
     void DrawRope()
     {
