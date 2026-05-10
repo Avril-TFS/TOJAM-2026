@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	431205792	Play_New_Sound_SFX			\Default Work Unit\Play_New_Sound_SFX	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	118877258	New Sound SFX	C:\Users\phill\Documents\GitHub\TOJAM2026\TriDiving\TriDiving_WwiseProject\.cache\Mac\SFX\Flight_3AC214E7.wem		\Actor-Mixer Hierarchy\Default Work Unit\New Sound SFX		1593852
+
