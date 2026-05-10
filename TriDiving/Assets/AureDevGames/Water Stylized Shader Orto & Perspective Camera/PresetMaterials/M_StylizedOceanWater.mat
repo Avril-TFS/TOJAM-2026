@@ -149,7 +149,7 @@ Material:
     - _WaveLength: 1
     - _WaveRiverLength: 0.73
     - _WaveRiverWidth: 0.16
-    - _WaveSpeed: 0.25
+    - _WaveSpeed: 0
     - _WaveSteepness: 3.5
     - _WaveStepness: 0.35
     - _WaveTileSize: 1.98

@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class SpawnSystem : MonoBehaviour
 {
+    [SerializeField] private GameObject terrainObject;
+    public enum PrefabSpawnMode
+    {
+        Random,   // Pick one prefab at random
+        All       // Spawn every prefab in the array
+    }
+
     [System.Serializable]
     public class ObjectSpawnEntry
     {
         public string label = "Object";
         public GameObject[] prefabs;
         public Transform[] spawnPoints;
+
+        [Tooltip("Random = spawn one prefab picked at random.\nAll = spawn every prefab in the array.")]
+        public PrefabSpawnMode spawnMode = PrefabSpawnMode.Random;
     }
 
     [System.Serializable]
@@ -89,24 +99,51 @@ public class SpawnSystem : MonoBehaviour
 
         ShuffleList(validEntries);
 
+        int totalSpawned = 0;
+
         for (int i = 0; i < count; i++)
         {
             ObjectSpawnEntry entry = validEntries[i];
-            GameObject prefab = entry.prefabs[Random.Range(0, entry.prefabs.Length)];
             Transform spawnPoint = entry.spawnPoints[Random.Range(0, entry.spawnPoints.Length)];
 
-            GameObject spawned = Instantiate(
-                prefab,
-                spawnPoint.position,
-                spawnPoint.rotation,
-                spawnedObjectContainer
-            );
+            if (entry.spawnMode == PrefabSpawnMode.All)
+            {
+                // Spawn every prefab in the array at the chosen spawn point
+                foreach (GameObject prefab in entry.prefabs)
+                {
+                    if (prefab == null) continue;
 
-            _activeObjects.Add(spawned);
-            OnObjectSpawned(spawned, spawnPoint, entry, phase);
+                    GameObject spawned = Instantiate(
+                        prefab,
+                        spawnPoint.position,
+                        spawnPoint.rotation,
+                        spawnedObjectContainer
+                    );
+
+                    _activeObjects.Add(spawned);
+                    OnObjectSpawned(spawned, spawnPoint, entry, phase);
+                    totalSpawned++;
+                }
+            }
+            else // PrefabSpawnMode.Random
+            {
+                // Pick one prefab at random
+                GameObject prefab = entry.prefabs[Random.Range(0, entry.prefabs.Length)];
+
+                GameObject spawned = Instantiate(
+                    prefab,
+                    spawnPoint.position,
+                    spawnPoint.rotation,
+                    spawnedObjectContainer
+                );
+
+                _activeObjects.Add(spawned);
+                OnObjectSpawned(spawned, spawnPoint, entry, phase);
+                totalSpawned++;
+            }
         }
 
-        Debug.Log($"[SpawnSystem] [{phase.label}] Spawned {count}/{validEntries.Count} entries | Elapsed: {_elapsedTime:F1}s");
+        Debug.Log($"[SpawnSystem] [{phase.label}] Spawned {totalSpawned} object(s) across {count}/{validEntries.Count} entries | Elapsed: {_elapsedTime:F1}s");
     }
 
     private void ShuffleList<T>(List<T> list)
