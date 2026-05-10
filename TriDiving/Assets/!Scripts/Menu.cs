@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] private GameObject camera;
+    [SerializeField] private GameObject cameraOOO;
     [SerializeField] private GameObject startButton, quitButton, creditsButton, backButton;
     [SerializeField] private GameObject titleText, creditsText;
 
@@ -34,7 +34,7 @@ public class Menu : MonoBehaviour
 
     public void Credits()
     {
-        camera.transform.rotation = Quaternion.Euler(0, -180, 0);
+        cameraOOO.transform.rotation = Quaternion.Euler(0, -180, 0);
         startButton.gameObject.SetActive(false);
         quitButton.gameObject.SetActive(false);
         creditsButton.gameObject.SetActive(false);
@@ -44,7 +44,7 @@ public class Menu : MonoBehaviour
     }
     public void MenuBack()
     {
-        camera.transform.rotation = Quaternion.Euler(115, 0, 0);
+        cameraOOO.transform.rotation = Quaternion.Euler(115, 0, 0);
         startButton.gameObject.SetActive(true);
         quitButton.gameObject.SetActive(true);
         creditsButton.gameObject.SetActive(true);

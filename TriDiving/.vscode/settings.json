@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Man, Mag[OS], and Soor.slnx"
+    "dotnet.defaultSolution": "TriDiving.slnx"
 }

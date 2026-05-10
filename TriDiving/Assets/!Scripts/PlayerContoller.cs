@@ -10,7 +10,7 @@ public class PlayerContoller : MonoBehaviour
 
     public Rope leftRope;
     public Rope rightRope;
-
+        
     [Header("Lives")]
     [SerializeField] private int totalLives = 3;
     private int currentLives = 3;
@@ -30,48 +30,67 @@ public class PlayerContoller : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        KeyCode shorten;
-        KeyCode lengthen;
+    // Old stuff brobably gone
+    /* void FixedUpdate()
+     {
+         KeyCode shortenL;
+         KeyCode lengthenL;
+         KeyCode shortenR;
+         KeyCode lengthenR;
 
-        switch (player)
-        {
-            case Player.PlayerA:
-                shorten = KeyCode.A;
-                lengthen = KeyCode.D;
-                break;
-            case Player.PlayerB:
-                shorten = KeyCode.J;
-                lengthen = KeyCode.L;
-                break;
-            case Player.PlayerC:
-                shorten = KeyCode.LeftArrow;
-                lengthen = KeyCode.RightArrow;
-                break;
-            default:
-                shorten = KeyCode.None;
-                lengthen = KeyCode.None;
-                break;
-        }
+         switch (player)
+         {       //Place holders until we set up controller support, but I have no idea how to do that
+             case Player.PlayerA:
+                 shortenL = KeyCode.A;
+                 lengthenL = KeyCode.Q;
+                 shortenR = KeyCode.D;
+                 lengthenR = KeyCode.E;
+                 break;
+             case Player.PlayerB:
+                 shortenL = KeyCode.J;
+                 lengthenL = KeyCode.U;
+                 shortenR = KeyCode.L;
+                 lengthenR = KeyCode.O;
+                 break;
+             case Player.PlayerC:
+                 shortenL = KeyCode.LeftArrow;
+                 lengthenL = KeyCode.UpArrow;
+                 shortenR = KeyCode.DownArrow;
+                 lengthenR = KeyCode.RightArrow;
+                 break;
+             default:
+                 shortenL = KeyCode.None;
+                 lengthenL = KeyCode.None;
+                 shortenR = KeyCode.None;
+                 lengthenR = KeyCode.None;
+                 break;
+         }
 
-        if (Input.GetKey(shorten))
-        {
-            leftRope.Shorten();
-            rightRope.Shorten();
-        }
-        else if (Input.GetKey(lengthen))
-        {
-            leftRope.Lengthen();
-            rightRope.Lengthen();
-        }
-        //Testing damage with space key
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage();
-        }
-    }
+         if (Input.GetKey(shortenL))
+         {
+             leftRope.Shorten();
+
+         }
+             else if (Input.GetKey(lengthenL))
+             {
+                 leftRope.Lengthen();
+
+             }
+         if (Input.GetKey(shortenR))
+         {
+             rightRope.Shorten();
+             }
+         else if (Input.GetKey(lengthenR))
+         {
+
+             rightRope.Lengthen();
+         }
+         //Testing damage with space key
+         if (Input.GetKeyDown(KeyCode.Space))
+         {
+             TakeDamage();
+         }
+     }*/
 
     private void OnTriggerEnter(Collider other)
     {
@@ -87,14 +106,14 @@ public class PlayerContoller : MonoBehaviour
 
         if (currentLives <= 0)
         {
-            GameOver();
+            pauseMenu.GameOver();
         }
     }
-    public void GameOver()
-    {
-        pauseMenu.GameOver();
+    //public void GameOver()
+    //{
+      //  pauseMenu.GameOver();
 
         //gameOverText.gameObject.SetActive(true);
         //Time.timeScale = 0f; 
-    }
+ //   }
 }

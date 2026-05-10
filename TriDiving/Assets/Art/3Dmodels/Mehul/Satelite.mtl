@@ -1,0 +1,44 @@
+# Blender 4.5.3 LTS MTL File: 'Satelite.blend'
+# www.blender.org
+
+newmtl Material.001
+Ns 597.107361
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/projectgame/ManMagosAndSoors/Tex/Poliigon_MetalGoldPaint_7253/2K/Poliigon_MetalGoldPaint_7253_BaseColor.jpg
+map_refl C:/projectgame/ManMagosAndSoors/Tex/Poliigon_MetalGoldPaint_7253/2K/Poliigon_MetalGoldPaint_7253_Metallic.jpg
+
+newmtl Material.002
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/projectgame/ManMagosAndSoors/Tex/Poliigon_MetalSteelBrushed_7174/2K/Poliigon_MetalSteelBrushed_7174_BaseColor.jpg
+map_refl C:/projectgame/ManMagosAndSoors/Tex/Poliigon_MetalSteelBrushed_7174/2K/Poliigon_MetalSteelBrushed_7174_Metallic.jpg
+
+newmtl Material.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl Material.004
+Ns 490.000000
+Ka 0.800000 0.800000 0.800000
+Kd 0.032568 0.104727 0.800266
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
