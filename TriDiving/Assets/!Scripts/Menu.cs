@@ -5,7 +5,7 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] private GameObject cameraOOO;
     [SerializeField] private GameObject startButton, quitButton, creditsButton, backButton;
-    [SerializeField] private GameObject titleText, creditsText;
+    [SerializeField] private GameObject titleImage, creditsText;
 
     private void Start()
     {
@@ -14,7 +14,7 @@ public class Menu : MonoBehaviour
         creditsButton.gameObject.SetActive(true);
         backButton.gameObject.SetActive(false);
 
-        titleText.gameObject.SetActive(true);
+        titleImage.gameObject.SetActive(true);
         creditsText.gameObject.SetActive(false);
     }
 
@@ -26,10 +26,10 @@ public class Menu : MonoBehaviour
     {
         Application.Quit();
 
-        if (Application.isEditor)
-        {
-            UnityEditor.EditorApplication.isPlaying = false;
-        }
+        // if (Application.isEditor)
+        // {
+        //     UnityEditor.EditorApplication.isPlaying = false;
+        // }
     }
 
     public void Credits()
@@ -40,7 +40,7 @@ public class Menu : MonoBehaviour
         creditsButton.gameObject.SetActive(false);
         backButton.gameObject.SetActive(true);
         creditsText.gameObject.SetActive(true);
-        titleText.gameObject.SetActive(false);
+        titleImage.gameObject.SetActive(false);
     }
     public void MenuBack()
     {
@@ -50,6 +50,6 @@ public class Menu : MonoBehaviour
         creditsButton.gameObject.SetActive(true);
         backButton.gameObject.SetActive(false);
         creditsText.gameObject.SetActive(false);
-        titleText.gameObject.SetActive(true);
+        titleImage.gameObject.SetActive(true);
     }
 }

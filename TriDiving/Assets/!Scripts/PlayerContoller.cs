@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI; 
 using TMPro;
 
 public class PlayerContoller : MonoBehaviour
@@ -13,9 +14,7 @@ public class PlayerContoller : MonoBehaviour
     public AK.Wwise.Event Play_Player_Impact_Object_Body;
 
     [Header("Lives")]
-    [SerializeField] private int totalLives = 3;
-    private int currentLives = 3;
-    [SerializeField] public TMP_Text livesText;
+    [SerializeField] LivesManager livesManager;
     [SerializeField] public TMP_Text gameOverText;
     [SerializeField] public TMP_Text gameWinText;
     public PauseMenu pauseMenu;
@@ -29,7 +28,6 @@ public class PlayerContoller : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentLives = totalLives;
 
     }
 
@@ -54,13 +52,12 @@ public class PlayerContoller : MonoBehaviour
     }
     public void TakeDamage()
     {
-        currentLives--;
-        livesText.text = "Lives: " + currentLives;
+        livesManager.LoseLife();
+        // livesText.text = "Lives: " + livesManager.GetLives();
 
         Play_Player_Impact_Object_Body.Post(gameObject);
 
-        if (currentLives <= 0)
-        {
+        if(livesManager.GetLives() == 0){
             pauseMenu.GameOver();
         }
     }
