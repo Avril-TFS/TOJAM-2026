@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 65c70d5ce4f58941b27bb4854155b5a9
     GuidInternal: 
-    m_lastTime: -8584231717558567184
+    m_lastTime: -8584226212593291224
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 8295615e1ea06d47a0ae5f481f27d188
     GuidInternal: 
-    m_lastTime: -8584231717558888738
+    m_lastTime: -8584226212595313476
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: b7d74ad9fe53234b82e9a784d12865ce
     GuidInternal: 
-    m_lastTime: -8584230982397174311
+    m_lastTime: -8584226212593322004
     List:
     - name: Main
       guid: 1532fc206eb322429734da9fd010b68c
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: d76d273bdb8b664da2fab9e069f30f5b
     GuidInternal: 
-    m_lastTime: -8584230982400846377
+    m_lastTime: -8584226212596891850
     List:
     - name: Play_Main_Music
       guid: 71180abac9b1d6408b766d6c1d022812
@@ -127,7 +127,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 29e2317b40491a4e9b47684f0e0864f5
       Path: Events\Default Work Unit\Play_Object_Large
-      maxAttenuation: 50
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
     - name: Play_Object_Medium
@@ -144,7 +144,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: eea98094db9749449b88c417a0df3b32
       Path: Events\Default Work Unit\Play_Object_Medium
-      maxAttenuation: 50
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
     - name: Play_Object_Small
@@ -161,7 +161,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: db2f686d0f188541b9fed0682e7abac1
       Path: Events\Default Work Unit\Play_Object_Small
-      maxAttenuation: 50
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
     - name: Play_Plane
@@ -178,7 +178,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: c87dc63220dcb44791bcdceb9ecf78ae
       Path: Events\Default Work Unit\Play_Plane
-      maxAttenuation: 50
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
     - name: Play_Player_Flight
@@ -213,8 +213,8 @@ MonoBehaviour:
         guid: bbbcb8608fdf6d4281c3d1d3fd5a31f2
       Path: Events\Default Work Unit\Play_Player_Impact_Object_Body
       maxAttenuation: 0
-      maxDuration: 0.26816985
-      minDuration: 0.1612953
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Satellite
       guid: 613c2d7f289cfb41904756ac30309d76
       id: 3829327645
@@ -229,7 +229,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 613c2d7f289cfb41904756ac30309d76
       Path: Events\Default Work Unit\Play_Satellite
-      maxAttenuation: 50
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
   RtpcWwu:
@@ -244,7 +244,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: b5c02c48ccbf8c4daf53069ade60c031
     GuidInternal: 
-    m_lastTime: -8584231717559220902
+    m_lastTime: -8584226212596891850
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -258,7 +258,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: a025b70cf4282141b2251d2d828bebf7
     GuidInternal: 
-    m_lastTime: -8584231717558607224
+    m_lastTime: -8584226212593322004
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -272,7 +272,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: ef3a3910bcea6d40960b3047d6ceca69
     GuidInternal: 
-    m_lastTime: -8584231717558597178
+    m_lastTime: -8584226212593322004
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -286,7 +286,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 69b79f720f92a646ad3b5e247ca91c7b
     GuidInternal: 
-    m_lastTime: -8584231717558577204
+    m_lastTime: -8584226212593301257
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 06000000070000000b0000000c000000
