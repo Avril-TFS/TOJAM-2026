@@ -47,7 +47,7 @@ public class SmoothMover : MonoBehaviour
         if (travelDuration <= 0f)
         {
             Debug.LogWarning("[SmoothMover] Duration must be > 0. Snapping to destination.");
-            transform.position = target.transform.position;
+            transform.position = new Vector3(transform.position.x, target.transform.position.y, transform.position.z);
             onComplete?.Invoke();
             return;
         }
@@ -61,7 +61,7 @@ public class SmoothMover : MonoBehaviour
         if (travelDuration <= 0f)
         {
             Debug.LogWarning("[SmoothMover] Duration must be > 0. Snapping to destination.");
-            transform.position = destination;
+            transform.position = new Vector3(transform.position.x, destination.y, transform.position.z);
             onComplete?.Invoke();
             return;
         }
@@ -83,7 +83,7 @@ public class SmoothMover : MonoBehaviour
 
     private IEnumerator MoveRoutine(GameObject target, float travelDuration, Action onComplete)
     {
-        Vector3 origin = transform.position;
+        float originY = transform.position.y;
         float elapsed = 0f;
 
         while (elapsed < travelDuration)
@@ -93,14 +93,18 @@ public class SmoothMover : MonoBehaviour
             float t = Mathf.Clamp01(elapsed / travelDuration);
             float curved = easingCurve.Evaluate(t);
 
-            Vector3 destination = target != null ? target.transform.position : transform.position;
-            transform.position = Vector3.LerpUnclamped(origin, destination, curved);
+            float destinationY = target != null ? target.transform.position.y : transform.position.y;
+            transform.position = new Vector3(
+                transform.position.x,
+                Mathf.LerpUnclamped(originY, destinationY, curved),
+                transform.position.z
+            );
 
             yield return null;
         }
 
         if (target != null)
-            transform.position = target.transform.position;
+            transform.position = new Vector3(transform.position.x, target.transform.position.y, transform.position.z);
 
         _activeMovement = null;
         onComplete?.Invoke();
@@ -108,7 +112,7 @@ public class SmoothMover : MonoBehaviour
 
     private IEnumerator MoveRoutine(Vector3 destination, float travelDuration, Action onComplete)
     {
-        Vector3 origin = transform.position;
+        float originY = transform.position.y;
         float elapsed = 0f;
 
         while (elapsed < travelDuration)
@@ -118,12 +122,16 @@ public class SmoothMover : MonoBehaviour
             float t = Mathf.Clamp01(elapsed / travelDuration);
             float curved = easingCurve.Evaluate(t);
 
-            transform.position = Vector3.LerpUnclamped(origin, destination, curved);
+            transform.position = new Vector3(
+                transform.position.x,
+                Mathf.LerpUnclamped(originY, destination.y, curved),
+                transform.position.z
+            );
 
             yield return null;
         }
 
-        transform.position = destination;
+        transform.position = new Vector3(transform.position.x, destination.y, transform.position.z);
         _activeMovement = null;
         onComplete?.Invoke();
     }
@@ -133,8 +141,10 @@ public class SmoothMover : MonoBehaviour
     {
         if (targetObject == null) return;
         Gizmos.color = Color.cyan;
-        Gizmos.DrawLine(transform.position, targetObject.transform.position);
-        Gizmos.DrawSphere(targetObject.transform.position, 0.1f);
+
+        Vector3 yOnlyTarget = new Vector3(transform.position.x, targetObject.transform.position.y, transform.position.z);
+        Gizmos.DrawLine(transform.position, yOnlyTarget);
+        Gizmos.DrawSphere(yOnlyTarget, 0.1f);
     }
 #endif
 }
