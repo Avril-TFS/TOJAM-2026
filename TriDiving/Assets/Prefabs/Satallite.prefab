@@ -95,6 +95,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &5869122712119951152
 SphereCollider:
@@ -130,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::YAxisMover
   speed: 5
-  lifetime: 15
+  lifetime: 12
 --- !u!65 &6035176901342944042
 BoxCollider:
   m_ObjectHideFlags: 0

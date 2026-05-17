@@ -8109,7 +8109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1415048783338530445, guid: 2e87b014245ca5d4ca674ddb550cf88a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2671661378355119280, guid: 2e87b014245ca5d4ca674ddb550cf88a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8477,6 +8477,9 @@ MonoBehaviour:
   Life1: {fileID: 1281858789}
   Life2: {fileID: 770924076}
   Life3: {fileID: 1485588292}
+  cameraTransform: {fileID: 330585546}
+  shakeDuration: 0.3
+  shakeMagnitude: 0.4
 --- !u!4 &618950893
 Transform:
   m_ObjectHideFlags: 0
