@@ -313,6 +313,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: e31c5b165c791be478c695ab6440c172, type: 2}
+  winSound: {fileID: 8300000, guid: f49a75ad89e93f74bb4dd47370e1d4e8, type: 3}
   livesManager: {fileID: 618950892}
   gameOverText: {fileID: 1271492330}
   gameWinText: {fileID: 27177491}
@@ -1101,10 +1102,10 @@ MonoBehaviour:
       - {fileID: 595269511}
       spawnMode: 0
   - label: Cloudspawn
-    startTime: 52
-    endTime: 65
-    spawnInterval: 0.3
-    spawnsPerCycle: 5
+    startTime: 50
+    endTime: 68
+    spawnInterval: 0.1
+    spawnsPerCycle: 20
     objects:
     - label: leftcloud
       prefabs:
@@ -1122,7 +1123,7 @@ MonoBehaviour:
       - {fileID: 1451668836}
       - {fileID: 256015433}
       - {fileID: 475737658}
-      spawnMode: 0
+      spawnMode: 1
   - label: "Phase 2 \u2013 Mid"
     startTime: 65
     endTime: 130
@@ -1232,6 +1233,7 @@ GameObject:
   - component: {fileID: 330585547}
   - component: {fileID: 330585549}
   - component: {fileID: 330585548}
+  - component: {fileID: 330585550}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1257,7 +1259,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 20.78461
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -1272,7 +1274,7 @@ Camera:
     height: 1
   near clip plane: 10
   far clip plane: 10000
-  field of view: 60
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1385,6 +1387,14 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!81 &330585550
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
 --- !u!1001 &340386371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2040,6 +2050,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: e31c5b165c791be478c695ab6440c172, type: 2}
+  winSound: {fileID: 0}
   livesManager: {fileID: 618950892}
   gameOverText: {fileID: 1271492330}
   gameWinText: {fileID: 27177491}
@@ -7673,7 +7684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ccfecc93cb4be4582566fc90995cf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  lives: 10
+  lives: 3
   Life1: {fileID: 1281858789}
   Life2: {fileID: 770924076}
   Life3: {fileID: 1485588292}
@@ -9681,6 +9692,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: e31c5b165c791be478c695ab6440c172, type: 2}
+  winSound: {fileID: 0}
   livesManager: {fileID: 618950892}
   gameOverText: {fileID: 1271492330}
   gameWinText: {fileID: 27177491}
@@ -10173,7 +10185,7 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: dacf822ae5a25a0429f8ae50b184fc88, type: 2}
   decodeBank: 0
   overrideLoadSetting: 0
-  loadAsynchronous: 0
+  loadAsynchronous: 1
   saveDecodedBank: 0
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
@@ -10806,6 +10818,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1564513889803497802, guid: cd086060d0d5993438abe123a3a4462a, type: 3}
+      propertyPath: moveTime
+      value: 73
+      objectReference: {fileID: 0}
     - target: {fileID: 2004303455658099377, guid: cd086060d0d5993438abe123a3a4462a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1297.4471

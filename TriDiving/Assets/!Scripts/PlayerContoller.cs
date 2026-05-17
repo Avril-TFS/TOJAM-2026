@@ -1,17 +1,18 @@
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 using TMPro;
-
 public class PlayerContoller : MonoBehaviour
 {
     public enum Player { PlayerA, PlayerB, PlayerC }
-
     [Header("Player")]
     public Player player;
-
     public Rope leftRope;
     public Rope rightRope;
     public AK.Wwise.Event Play_Player_Impact_Object_Body;
+
+    [Header("Audio")]
+    public AudioClip winSound;
+    private AudioSource audioSource;
 
     [Header("Lives")]
     [SerializeField] LivesManager livesManager;
@@ -23,12 +24,12 @@ public class PlayerContoller : MonoBehaviour
     {
         gameOverText.gameObject.SetActive(false);
         gameWinText.gameObject.SetActive(false);
+
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,33 +40,28 @@ public class PlayerContoller : MonoBehaviour
         }
         if (other.CompareTag("winBox"))
         {
-            Time.timeScale = 0f;
+            if (winSound != null)
+            {
+                audioSource.PlayOneShot(winSound);
+            }
 
+            Time.timeScale = 0f;
             if (gameWinText != null)
             {
                 gameWinText.gameObject.SetActive(true);
             }
-
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
     }
+
     public void TakeDamage()
     {
         livesManager.LoseLife();
-        // livesText.text = "Lives: " + livesManager.GetLives();
-
         Play_Player_Impact_Object_Body.Post(gameObject);
-
-        if(livesManager.GetLives() == 0){
+        if (livesManager.GetLives() == 0)
+        {
             pauseMenu.GameOver();
         }
     }
-    //public void GameOver()
-    //{
-      //  pauseMenu.GameOver();
-
-        //gameOverText.gameObject.SetActive(true);
-        //Time.timeScale = 0f; 
- //   }
 }
