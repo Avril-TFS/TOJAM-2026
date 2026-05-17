@@ -33,7 +33,9 @@ public class LivesManager : MonoBehaviour
         lives--;
 
         // Trigger camera shake
-        StartCoroutine(CameraShake());
+        if(lives!=0){
+            StartCoroutine(CameraShake());
+        }
 
         if (lives == 2)
         {
