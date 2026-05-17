@@ -127,7 +127,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 29e2317b40491a4e9b47684f0e0864f5
       Path: Events\Default Work Unit\Play_Object_Large
-      maxAttenuation: 0
+      maxAttenuation: 50
       maxDuration: -1
       minDuration: -1
     - name: Play_Object_Medium
@@ -144,7 +144,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: eea98094db9749449b88c417a0df3b32
       Path: Events\Default Work Unit\Play_Object_Medium
-      maxAttenuation: 0
+      maxAttenuation: 50
       maxDuration: -1
       minDuration: -1
     - name: Play_Object_Small
@@ -161,7 +161,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: db2f686d0f188541b9fed0682e7abac1
       Path: Events\Default Work Unit\Play_Object_Small
-      maxAttenuation: 0
+      maxAttenuation: 50
       maxDuration: -1
       minDuration: -1
     - name: Play_Plane
@@ -178,7 +178,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: c87dc63220dcb44791bcdceb9ecf78ae
       Path: Events\Default Work Unit\Play_Plane
-      maxAttenuation: 0
+      maxAttenuation: 50
       maxDuration: -1
       minDuration: -1
     - name: Play_Player_Flight
@@ -213,8 +213,8 @@ MonoBehaviour:
         guid: bbbcb8608fdf6d4281c3d1d3fd5a31f2
       Path: Events\Default Work Unit\Play_Player_Impact_Object_Body
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.26816985
+      minDuration: 0.1612953
     - name: Play_Satellite
       guid: 613c2d7f289cfb41904756ac30309d76
       id: 3829327645
@@ -229,7 +229,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 613c2d7f289cfb41904756ac30309d76
       Path: Events\Default Work Unit\Play_Satellite
-      maxAttenuation: 0
+      maxAttenuation: 50
       maxDuration: -1
       minDuration: -1
   RtpcWwu:
